@@ -52,6 +52,11 @@ This tutorial provides a foundational introduction to spatial transcriptomics an
 - Zoom into regions of interest using `crop_coord` to examine clusters 5 and 9
 - Adjust spot transparency (`alpha`) to reveal underlying tissue morphology
 
+  <img width="2038" height="609" alt="image" src="https://github.com/user-attachments/assets/df464b0f-eae8-4403-85db-18b9bcc2cff6" />
+
+<img width="2294" height="1091" alt="image" src="https://github.com/user-attachments/assets/afe6eeab-9450-4a1b-bcfa-4ef6848d3471" />
+
+
 #### 5. Marker Gene Analysis
 - Rank marker genes per cluster using `sc.tl.rank_genes_groups()` (t-test method)
 - Visualize top-10 markers for cluster 9 via a heatmap
@@ -107,11 +112,13 @@ This tutorial demonstrates the use of **Squidpy's image analysis capabilities** 
 - Load pre-processed AnnData and ImageContainer using `sq.datasets.visium_fluo_adata_crop()` and `sq.datasets.visium_fluo_image_crop()`
 - Visualize pre-annotated gene-expression clusters with `sq.pl.spatial_scatter()`
 - Inspect fluorescence channels with `img.show(channelwise=True)`
+<img width="790" height="289" alt="image" src="https://github.com/user-attachments/assets/c6701bed-99e6-491d-9ff8-1f388905ccaf" />
 
 #### 2. Image Segmentation
 - Smooth the image layer using `sq.im.process(method="smooth")`
 - Perform nucleus segmentation on the DAPI channel (channel 0) via watershed algorithm: `sq.im.segment(method="watershed")`
 - Results stored in `img["segmented_watershed"]` as a label image
+<img width="515" height="267" alt="image" src="https://github.com/user-attachments/assets/41c7310a-38b6-4554-9121-093ac21960af" />
 
 #### 3. Segmentation Feature Extraction
 - Extract segmentation features with `sq.im.calculate_image_features(features="segmentation")`
@@ -119,6 +126,8 @@ This tutorial demonstrates the use of **Squidpy's image analysis capabilities** 
   - **Cell count per spot** — approximation of cellular density
   - **Channel-wise mean intensity** — per-channel signal within segmented objects
 - Use `sq.pl.extract()` to temporarily project `obsm` features into `obs` for plotting
+
+<img width="1088" height="829" alt="image" src="https://github.com/user-attachments/assets/2aa0d019-e197-4dc7-a5be-63fc72d9eb56" />
 
 #### 4. Multi-Scale Image Feature Extraction
 Three feature sets extracted at different scales:
@@ -138,6 +147,7 @@ All feature sets are concatenated into `adata.obsm["features"]` with deduplicate
   - `features_histogram_cluster`
   - `features_texture_cluster`
 - Compare image-feature clusters against gene-expression clusters spatially
+<img width="3435" height="2205" alt="image" src="https://github.com/user-attachments/assets/7d982724-43d2-4462-b5ea-16ca248d6b8b" />
 
 ### Key Findings
 
@@ -187,6 +197,7 @@ This tutorial applies **Squidpy's spatial statistics and graph analysis tools** 
 - Extract multi-scale summary features at two scales (`scale=1.0` and `scale=2.0`) covering increasing spatial context
 - Concatenate into `adata.obsm["features"]` and compute feature-based Leiden clusters
 - Compare image-feature clusters vs. gene-expression clusters spatially
+<img width="651" height="221" alt="image" src="https://github.com/user-attachments/assets/50671b8c-5762-48c0-b0a5-86d4350d0a39" />
 
 #### 2. Spatial Graph Construction
 - Build a spatial connectivity matrix using `sq.gr.spatial_neighbors()`
@@ -212,6 +223,9 @@ This tutorial applies **Squidpy's spatial statistics and graph analysis tools** 
 - Evaluate spatial autocorrelation using `sq.gr.spatial_autocorr(mode="moran")`
 - Applied to top 1,000 highly variable genes with 100 permutations
 - Results saved to `adata.uns["moranI"]` sorted by Moran's I statistic
+
+- <img width="2586" height="431" alt="image" src="https://github.com/user-attachments/assets/d6aebd27-c754-4d2b-a281-7451bc68254a" />
+
 
 **Top spatially variable genes identified:**
 
@@ -294,6 +308,7 @@ This tutorial demonstrates analysis of **10x Genomics Xenium** data — a subcel
   - **Closeness centrality** — how close a group is to all other nodes
   - **Degree centrality** — fraction of non-group nodes connected to the group
   - **Clustering coefficient** — degree to which group nodes cluster together
+<img width="1561" height="431" alt="image" src="https://github.com/user-attachments/assets/02391258-f81b-48ac-9ddf-c04d2348ca01" />
 
 #### 5. Co-Occurrence Probability
 - Subsample 50% of cells for computational efficiency: `sc.pp.subsample(fraction=0.5)`
@@ -303,6 +318,8 @@ This tutorial demonstrates analysis of **10x Genomics Xenium** data — a subcel
 #### 6. Neighborhood Enrichment
 - Compute permutation-based enrichment (1,000 permutations): `sq.gr.nhood_enrichment()`
 - Side-by-side visualization of enrichment heatmap and spatial scatter plot
+
+<img width="1224" height="494" alt="image" src="https://github.com/user-attachments/assets/c6748ce4-1a94-4bac-a555-fb5ee2d7aa2b" />
 
 #### 7. Moran's I — Spatially Variable Genes
 - Rebuild spatial graph on subsampled data with Delaunay triangulation
