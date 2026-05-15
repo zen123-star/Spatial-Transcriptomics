@@ -1,17 +1,18 @@
 # Spatial-Transcriptomics
 # Spatial Transcriptomics Analysis
 
-#*FILES:*
+#**FILES:**
+
 1.*Spatial Transcriptomics*
 https://drive.google.com/file/d/1FwM2L8RhW5pUo1hbW9gOUSR9YNhP6GV3/view?usp=sharing
 
-2.*Visium flouresecnce*
+**2.Visium flouresecnce**
 https://drive.google.com/file/d/10vppxJ2M_F5DueE3EFm-vvOaGG7LJr2j/view?usp=sharing
 
-3.*Visisum H&E data:*
+**3.Visisum H&E data:**
 https://drive.google.com/file/d/10vppxJ2M_F5DueE3EFm-vvOaGG7LJr2j/view?usp=sharing
 
-4.*Xenium data*
+**4.Xenium data**
 https://drive.google.com/file/d/10vppxJ2M_F5DueE3EFm-vvOaGG7LJr2j/view?usp=sharing
 
 A comprehensive collection of four end-to-end tutorials covering spatial transcriptomics data analysis using **Scanpy**, **Squidpy**, and **SpatialData**. Each tutorial targets a distinct platform or data modality, from classical Visium H&E slides to next-generation Xenium single-cell resolved data.
