@@ -1,9 +1,9 @@
 # Spatial-Transcriptomics
 # Spatial Transcriptomics Analysis
 
-#**FILES:**
+**FILES:**
 
-1.*Spatial Transcriptomics*
+**1.Spatial Transcriptomics**
 https://drive.google.com/file/d/1FwM2L8RhW5pUo1hbW9gOUSR9YNhP6GV3/view?usp=sharing
 
 **2.Visium flouresecnce**
